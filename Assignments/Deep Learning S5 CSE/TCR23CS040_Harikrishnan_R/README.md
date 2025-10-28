@@ -1,8 +1,11 @@
-# Neural Network Implementation
+# CST395 DEEP LEARNING AND NEURAL NETWORKS
+
+Harikrishnan R <br>
+S5 CSE<br>
+Roll No : 39 <br>
+TCR23CS040
 
 ## Changes
-
----
 
 ### 1. Added pre_activation field to node struct
 
@@ -28,36 +31,30 @@ struct node
 
 **Changes**:
 
-```cpp
-double sigmoid(double x)
-    {
-        return (1 / (1 + exp(-x)));
-    }
+```cpp []
+double sigmoid(double x){
+    return (1 / (1 + exp(-x)));
+}
 
-    double relu(double x)
-    {
-        if (x > 0.0)
-        {
-            return x;
-        }
-        return 0;
+double relu(double x){
+    if (x > 0.0){
+        return x;
     }
+    return 0;
+}
 
-    double leaky_relu(double x)
-    {
-        if (x > 0.0)
-        {
-            return x;
-        }
-        return (0.01 * x);
+double leaky_relu(double x){
+    if (x > 0.0){
+        return x;
     }
+    return (0.01 * x);
+}
 ```
 
 ### 3. Rewrote backprop function to be less complicated
 
 ```cpp
-void backward(std::list<node>::iterator n_id)
-{
+void backward(std::list<node>::iterator n_id){
     assert(n_id->w_out.size() == n_id->error.size());
 
     // Step 1: Accumulate error from downstream neurons
@@ -65,8 +62,7 @@ void backward(std::list<node>::iterator n_id)
     auto e_id = n_id->error.begin();
     auto w_id = n_id->w_out.begin();
 
-    while (e_id != n_id->error.end() && w_id != n_id->w_out.end())
-    {
+    while (e_id != n_id->error.end() && w_id != n_id->w_out.end()){
         acc_err += (**e_id) * w_id->second;
         ++e_id;
         ++w_id;
@@ -80,8 +76,7 @@ void backward(std::list<node>::iterator n_id)
     auto it_in = n_id->in.begin();
     auto it_w_in = n_id->w_in.begin();
 
-    while (it_in != n_id->in.end())
-    {
+    while (it_in != n_id->in.end()){
         **it_w_in += learning_rate * n_id->delta * (**it_in);
         ++it_in;
         ++it_w_in;
