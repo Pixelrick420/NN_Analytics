@@ -38,7 +38,7 @@ public:
         std::cout << "Error: [";
         for (auto field : err)
         {
-            printf("%f ", field);
+            printf("%f", field);
         }
         std::cout << "]" << std::endl;
     }

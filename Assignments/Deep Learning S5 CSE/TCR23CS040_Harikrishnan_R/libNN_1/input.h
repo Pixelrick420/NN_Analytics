@@ -24,9 +24,9 @@ public:
         std::cout << "Input: [";
         for (auto field : in)
         {
-            printf("%f ", field);
+            printf("%f", field);
         }
-        std::cout << "]" << std::endl;
+        std::cout << "]\t\t\t";
     }
 
     void set_input(std::list<double> &input)

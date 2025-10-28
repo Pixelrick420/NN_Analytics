@@ -38,7 +38,7 @@ public:
         std::cout << "Label: [";
         for (auto field : lbl)
         {
-            printf("%f ", field);
+            printf("%f", field);
         }
         std::cout << "]" << std::endl;
     }

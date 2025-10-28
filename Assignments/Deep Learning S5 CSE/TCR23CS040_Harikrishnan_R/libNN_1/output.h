@@ -34,9 +34,9 @@ public:
         std::cout << "Output: [";
         for (auto field : out)
         {
-            printf("%f ", *field);
+            printf("%f", *field);
         }
-        std::cout << "]" << std::endl;
+        std::cout << "]\t\t\t";
     }
 };
 

@@ -1,9 +1,11 @@
-# CST395 DEEP LEARNING AND NEURAL NETWORKS
+# CST395
 
-Harikrishnan R <br>
-S5 CSE<br>
-Roll No : 39 <br>
-TCR23CS040
+## DEEP LEARNING AND NEURAL NETWORKS
+
+- Harikrishnan R <br>
+- S5 CSE <br>
+- Roll No : 39 <br>
+- TCR23CS040
 
 ## Changes
 
@@ -31,7 +33,7 @@ struct node
 
 **Changes**:
 
-```cpp []
+```cpp
 double sigmoid(double x){
     return (1 / (1 + exp(-x)));
 }
